@@ -1,4 +1,9 @@
 import os
+import streamlit as st
+
+st.set_page_config(page_title="GenAI PDF Summarizer", layout="wide")
+st.markdown("✅ App is running!")
+
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 os.environ["OMP_NUM_THREADS"] = "1"
 os.environ["MKL_NUM_THREADS"] = "1"
@@ -10,7 +15,11 @@ from transformers import pipeline
 import textwrap
 
 # Load Model
-summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
+@st.cache_resource()
+def load_summarizer():
+    return pipeline("summarization", model="facebook/bart-large-cnn")
+
+summarizer = load_summarizer()
 
 # Extract Text from PDF
 def extract_text_from_pdf(file):
