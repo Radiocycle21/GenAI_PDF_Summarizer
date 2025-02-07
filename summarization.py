@@ -1,5 +1,6 @@
 import os
-os.environ["TOKENIZERS_PARALLELISM"] = "false"  # Prevents tokenizer warnings
+os.environ["PYTORCH_ENABLE_MPS_FALLBACK"] = "1"
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
 import streamlit as st
 import PyPDF2
