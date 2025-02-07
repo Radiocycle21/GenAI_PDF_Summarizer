@@ -16,9 +16,15 @@ def extract_text_from_pdf(file):
 
 # Summarize Text
 def summarize_text(text):
-    chunks = textwrap.wrap(text, width=1024)
-    summaries = [summarizer(chunk, max_length=150, min_length=50, do_sample=False)[0]['summary_text'] for chunk in chunks]
-    return " ".join(summaries)
+    chunks = textwrap.wrap(text, width=512)  # Use smaller chunks
+    summary = []
+    for chunk in chunks:
+        try:
+            result = summarizer(chunk, max_length=150, min_length=50, do_sample=False)
+            summary.append(result[0]['summary_text'])
+        except Exception as e:
+            summary.append(f"[Error summarizing: {str(e)}]")
+    return " ".join(summary)
 
 # Streamlit UI
 st.title("📄 PDF & Text Summarizer")
