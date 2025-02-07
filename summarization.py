@@ -1,3 +1,5 @@
+import os
+os.environ["TRANSFORMERS_NO_PYTORCH"] = "1"  # Forces Transformers to use TensorFlow
 
 import streamlit as st
 import PyPDF2
