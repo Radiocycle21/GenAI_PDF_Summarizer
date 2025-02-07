@@ -1,6 +1,6 @@
 streamlit
 transformers
-torch==2.0.1
+torch==2.0.1+cpu
 torchvision
 torchaudio
 sentencepiece
