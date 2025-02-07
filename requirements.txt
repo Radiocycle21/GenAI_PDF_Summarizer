@@ -1,6 +1,5 @@
 streamlit
 transformers
-torch
-sentencepiece
 PyPDF2
 textwrap3
+tensorflow
