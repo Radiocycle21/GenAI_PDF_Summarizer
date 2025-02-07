@@ -5,15 +5,7 @@ from transformers import pipeline
 import textwrap
 
 # Load Model
-from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
-
-# Load model & tokenizer
-model_name = "facebook/bart-large-cnn"
-tokenizer = AutoTokenizer.from_pretrained(model_name)
-model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
-
-# Create summarization pipeline
-summarizer = pipeline("summarization", model=model, tokenizer=tokenizer)
+summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
 
 # Extract Text from PDF
 def extract_text_from_pdf(file):
