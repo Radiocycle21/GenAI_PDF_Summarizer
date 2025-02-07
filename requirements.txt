@@ -1,11 +1,7 @@
---upgrade
-pip
-setuptools
-wheel
-streamlit
-transformers
-torch==2.0.1
-torchvision==0.15.2
-torchaudio==2.0.2
+streamlit==1.30.0
+transformers==4.37.0
+torch==2.1.0
+torchvision==0.16.0
+torchaudio==2.1.0
 sentencepiece
 PyPDF2
