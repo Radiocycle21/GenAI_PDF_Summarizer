@@ -1,5 +1,5 @@
 streamlit
 transformers
-torch  # Install PyTorch (needed for BART model)
+torch==2.0.1  # Fixes compatibility issue
 PyPDF2
 textwrap3
