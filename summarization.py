@@ -1,7 +1,3 @@
-import os
-os.environ["PYTORCH_ENABLE_MPS_FALLBACK"] = "1"
-os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
-
 import streamlit as st
 import PyPDF2
 from transformers import pipeline
