@@ -1,5 +1,8 @@
 import os
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
+os.environ["OMP_NUM_THREADS"] = "1"
+os.environ["MKL_NUM_THREADS"] = "1"
+os.environ["NUMEXPR_NUM_THREADS"] = "1"
 
 import streamlit as st
 import PyPDF2
@@ -41,8 +44,8 @@ if st.button("🔍 Summarize"):
             with st.spinner("Processing..."):
                 summary_result = summarize_text(extract_text_from_pdf(uploaded_file))
     elif user_text.strip():
-        if len(user_text.split()) > 1000:
-            st.error("❌ Text exceeds 1000-word limit!")
+        if len(user_text.split()) > 500:
+            st.error("❌ Text exceeds 500-word limit!")
         else:
             with st.spinner("Summarizing..."):
                 summary_result = summarize_text(user_text)
