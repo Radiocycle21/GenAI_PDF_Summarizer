@@ -1,7 +1,6 @@
---upgrade
 streamlit
 transformers
-torch==2.0.1  # Or torch>=2.0.0 if 2.0.1 still gives issues
+torch>=2.0.0
 torchvision
 torchaudio
 sentencepiece
