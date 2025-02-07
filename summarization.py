@@ -28,11 +28,13 @@ def extract_text_from_pdf(file):
 
 # Summarize Text
 def summarize_text(text):
-    chunks = textwrap.wrap(text, width=512)  # Use smaller chunks
+    chunks = textwrap.wrap(text, width=512)  # Keep chunk size small
     summary = []
     for chunk in chunks:
+        input_length = len(chunk.split())  # Get the number of words in input
+        max_length = max(30, int(input_length * 0.5))  # Adjust max_length dynamically
         try:
-            result = summarizer(chunk, max_length=150, min_length=50, do_sample=False)
+            result = summarizer(chunk, max_length=max_length, min_length=10, do_sample=False)
             summary.append(result[0]['summary_text'])
         except Exception as e:
             summary.append(f"[Error summarizing: {str(e)}]")
