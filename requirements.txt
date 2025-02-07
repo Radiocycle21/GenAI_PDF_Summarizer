@@ -1,5 +1,5 @@
 streamlit
-transformers
-torch==2.0.1  # Fixes compatibility issue
+transformers==4.36.2
+torch==2.0.1
 PyPDF2
 textwrap3
