@@ -5,3 +5,4 @@ torchvision==0.17.0
 torchaudio==2.2.0
 sentencepiece
 PyPDF2
+numpy<2
