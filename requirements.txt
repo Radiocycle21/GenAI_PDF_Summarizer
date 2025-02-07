@@ -1,5 +1,7 @@
 streamlit
 transformers
-torch
+torch==2.0.1
+torchvision
+torchaudio
+sentencepiece
 PyPDF2
-textwrap3
