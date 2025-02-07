@@ -1,5 +1,5 @@
 import os
-os.environ["TRANSFORMERS_NO_PYTORCH"] = "1"  # Forces Transformers to use TensorFlow
+os.environ["TOKENIZERS_PARALLELISM"] = "false"  # Prevents tokenizer warnings
 
 import streamlit as st
 import PyPDF2
