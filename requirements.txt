@@ -1,5 +1,5 @@
 streamlit
 transformers
+torch  # Install PyTorch (needed for BART model)
 PyPDF2
 textwrap3
-tensorflow
