@@ -1,8 +1,4 @@
 import os
-import streamlit as st
-
-st.set_page_config(page_title="GenAI PDF Summarizer", layout="wide")
-#st.markdown("✅ App is running!")
 
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 os.environ["OMP_NUM_THREADS"] = "1"
